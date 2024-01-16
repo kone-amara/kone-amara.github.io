@@ -1,0 +1,139 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#messages{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background: #333;
+    overflow-y: auto;
+    padding: 10px 10px 120px 60px;
+}
+#messages button{
+    position: relative;
+    background: #666;
+    color: #fff;
+    position: relative;
+    width: auto;
+    border-radius: 10px;
+    border: none;
+    margin-left: 2px;
+    transition: .3s;
+}
+#messages button:hover{
+    cursor: pointer;
+    background: #00bb00;
+    font-weight: 700;
+}
+#sendMsg{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+}
+#msgTxt{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: calc(100% - 20%);
+    height: 100%;
+    padding-left: 10px;
+    border: 1px solid red;
+    outline: none;
+    resize: none;
+    font-size: 1.2rem;
+}
+#msgBtn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5rem;
+    width: 20%;
+    height: 100%;
+    background: #009900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    transition: .3s;
+}
+
+#sendMsg span{
+    width: 1.3rem;
+    height: 1.3rem;
+    top: 0;
+    right: 0;
+    background: #fff;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%, 8% 60%, 40% 50%, 8% 40%);
+}
+
+#msgBtn:hover{
+    cursor: pointer;
+    background: #00bb00;
+}
+
+.outer{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: -4%;
+    display: flex;
+    box-sizing: border-box;
+}
+#inner{
+    padding: 20px;
+    border-radius: 10px;
+}
+.me{
+    background: #8800ff;
+    color: #fff;
+}
+.notMe{
+    background: #fff;
+    color: #8800ff;
+}
+
+@media screen and (max-width: 480px) {
+    #messages{
+        padding: 10px 5px 70px 15px;
+    }
+    #messages button{
+        font-size: 10px;
+    }
+    #inner{
+        padding: 10px;
+    }
+    #sendMsg{
+        height: 8%;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    #messages{
+        padding: 10px 30px 100px 30px;
+    }
+    #inner{
+        padding: 15px;
+    }
+}
+@media screen and (min-width: 778px) {
+    #messages{
+        padding: 10px 10px 100px 80px;
+    }
+    #inner{
+        padding: 15px;
+        font-size: 1.3rem;
+    }
+    #sendMsg{
+        height: 12%;
+    }
+    #messages button{
+        margin-right: 5%;
+    }
+}
