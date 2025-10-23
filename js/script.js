@@ -34,6 +34,9 @@ navTogglerBtn.addEventListener("click", function () {
 // toggle class active when scrolling
 AllSections = document.querySelectorAll(".section");
 window.addEventListener("scroll", () => {
+      if(aside.classList.contains("active")){
+            aside.classList.remove("active");
+      }
       let scrollY = window.pageYOffset;
       AllSections.forEach(sec => {
             const sectionTop = sec.offsetTop;
@@ -62,3 +65,10 @@ const calculateAge = () => {
       return age;
 };
 age.textContent = `${calculateAge()} years`;
+
+window.onclick = function (event) {
+      const navToggler = document.querySelector('.nav-toggler');
+      if (event.target === nav) {
+            navToggler.classList.toggle('active');
+      }
+};

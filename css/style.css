@@ -26,6 +26,7 @@ body{
       outline: none;
       text-decoration: none;
       box-sizing: border-box;
+      transition: 0.3s ease;
 }
 ::before,::after{
       box-sizing: border-box;
@@ -167,7 +168,7 @@ ul{
       cursor: pointer;
       position: fixed;
       right: 10px;
-      top: 10px;
+      top: 7%;
       border-radius: 5px;
       background: var(--bg-black-100);
       display: none;
@@ -216,6 +217,7 @@ ul{
 }
 .aside .nav li a.active{
       color: var(--skin-color);
+      border-bottom: 2px solid var(--skin-color);
 }
 .aside .nav li a i{
       margin-right: 15px;
@@ -676,9 +678,45 @@ h3.my-profession{
 }
 /* Responsive */
 @media (max-width: 1199px) {
-      .aside{
-            left: -270px;
+       .aside{
+            width: 100%;
+            left: 0;
+            display: flex;
+            height: auto;
+            box-shadow: 0 10px 5px rgba(18, 13, 13, 0.1);
       }
+      .aside .logo{
+            top: 5px;
+            left: 10px;
+      }
+      .aside .logo a{
+            padding: 7px 10px;
+            font-size: 15px;
+            letter-spacing: 2px;
+      }
+      .aside .nav{
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 20%;
+            margin-top: 5px;
+            right: 1%;
+      }
+      .aside .nav li{
+            margin-bottom: auto;
+      }
+      .aside .nav li a{
+            font-size: 11px;
+            padding: 5px;
+            margin: 5px;
+      }
+      .aside .nav li a.active{
+            color: var(--skin-color);
+      }
+      .aside .nav li a i{
+            margin-right: 5px;
+      }
+
       .main-contaner{
             padding-left: 0;
       }
@@ -693,15 +731,23 @@ h3.my-profession{
       }
 }
 @media (max-width: 991px) {
-      .aside .nav-toggler{
+      /* .aside .nav-toggler{
             display: flex;
-      }
-      .aside.active{
+      } */
+      /* .aside.active{
             left: 0;
             box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
       }
       .aside.active .nav{
             margin-top: 100px;
+      } */
+      .aside{
+            position: fixed;
+      }
+      .aside .nav li a{
+            font-size: 11px;
+            padding: 0px;
+            margin: 6px;
       }
       .home .home-img{
             display: flex;
@@ -747,19 +793,34 @@ h3.my-profession{
 @media (max-width: 575px) {
       .aside .nav-toggler{
             display: flex;
+            top: 2%;
+      }
+      .aside .nav{
+            display: none;
       }
       .aside.active{
             left: 0;
+            height: 100%;
+            width: 35%;
             box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
       }
       .aside.active .nav{
-            margin-top: 100px;
+            position: absolute;
+            margin-top: 10%;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 100%;
       }
       .aside .nav li{
             margin-bottom: 10px;
       }
+      .aside.active .nav li a{
+            font-size: 15px;
+            padding: 15px;
+      }
       .aside .nav li a{
-            font-size: 14px;
+            font-size: 15px;
             padding: 5px 10px;
       }
       .main-container{
