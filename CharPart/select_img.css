@@ -43,7 +43,7 @@ label{
 input{
     display: none;
 }
-a{
+#submit{
     display: block;
     width: 200px;
     background: #2131b9;

@@ -1,0 +1,270 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#messages{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background: #333;
+    overflow-y: auto;
+    padding: 10px 10px 120px 60px;
+}
+#messages button{
+    position: absolute;
+    background: #000;
+    color: #fff;
+    width: auto;
+    padding: 6px;
+    top: 0;
+    right: 12%;
+    border-radius: 10px;
+    border: none;
+    transition: .3s;
+}
+#messages button::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    bottom: -8px;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+#messages button:hover{
+    cursor: pointer;
+}
+#sendMsg{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 98%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 10px 0;
+}
+#msgTxt{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: calc(100% - 16%);
+    height: 100%;
+    padding-left: 10px;
+    border: 1px solid red;
+    outline: none;
+    resize: none;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    padding:0 20% 0 50px;
+    background: #888;
+}
+.message-span{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    background: red;
+    transform: translateY(-50%);
+    right: calc(120px * var(--i));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.message-span:hover{
+    cursor: pointer;
+}
+.message-span i{
+    font-size: 1.2rem;
+    color: #000;
+}
+#msgBtn{
+    position: relative;
+    right: 0;
+    top: 0;
+    font-size: 1.8rem;
+    width: 15%;
+    height: 100%;
+    background: #009900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    transition: .3s;
+    border-radius:80px;
+}
+
+#msgBtn span{
+    width: 1.3rem;
+    height: 1.3rem;
+    top: 0;
+    right: 0;
+    background: #fff;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%, 8% 60%, 40% 50%, 8% 40%);
+}
+
+#msgBtn:hover{
+    cursor: pointer;
+    background: #00bb00;
+}
+
+.outer{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: -4%;
+    display: flex;
+    box-sizing: border-box;
+}
+.outer button{
+    display: none;
+}
+#inner{
+    padding: 20px;
+    border-radius: 10px;
+}
+.me{
+    background: #8800ff;
+    color: #fff;
+}
+#dltMsg.activer{
+    display: flex;
+    font-weight: 500;
+}
+.notMe{
+    background: #fff;
+    color: #8800ff;
+}
+
+.message-span.sendDocs:hover{
+    background: #d9d9d9;
+}
+.message-span.sendImage:hover{
+    background: #d9d9d9;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    #messages{
+        padding: 10px 5px 70px 15px;
+    }
+    #messages button{
+        font-size: 10px;
+    }
+    #inner{
+        padding: 10px;
+    }
+    #sendMsg{
+        height: 8%;
+    }
+
+    .outer img{
+        height: 30px;
+        width: 30px;
+    }
+
+    .outer button{
+        font-size: .8rem;
+        text-transform: lowercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 5px auto;
+        font-family: tahoma;
+    }
+
+    .outer .me{
+        padding: 5px;
+        font-size: 1.2rem;
+        border-radius: 30px;
+    }
+
+    .message-span{
+        height: 25px;
+        width: 25px;
+        padding: 0;
+    }
+    .message-span.sendDocs{
+        margin-right: -105px;
+        background: #d1d1d194;
+    }
+    .message-span.sendImage{
+        margin-right: -60px;
+        background: #d1d1d194;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    #messages{
+        padding: 10px 30px 100px 30px;
+    }
+    #inner{
+        padding: 15px;
+    }
+
+    /* C'est ça que j'ai ajouté */
+    .outer button{
+        font-size: .8rem;
+        text-transform: lowercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 5px auto;
+        font-family: tahoma;
+    }
+
+    .outer img{
+        height: 50px;
+        width: 50px;
+    }
+
+    .outer .me{
+        padding: 15px;
+        font-size: 1.2rem;
+        border-radius: 30px;
+    }
+
+    .message-span.sendDocs{
+        margin-right: 10px;
+        background: #d1d1d194;
+    }
+    .message-span.sendImage{
+        margin-right: 10px;
+        background: #d1d1d194;
+    }
+}
+@media screen and (min-width: 1024px) {
+
+    #messages{
+        padding: 10px 10px 100px 80px;
+    }
+    #inner{
+        padding: 15px;
+        font-size: 1.3rem;
+    }
+    #sendMsg{
+        height: 12%;
+        padding-left: 0;
+    }
+    .outer{
+        /* margin-left: -5%; */
+        padding-right: 40px;
+    }
+    
+    .message-span.sendDocs{
+        margin-right: 50px;
+        background: #d1d1d194;
+    }
+    .message-span.sendImage{
+        margin-right: 60px;
+        background: #d1d1d194;
+    }
+}
