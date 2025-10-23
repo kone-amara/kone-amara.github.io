@@ -34,9 +34,9 @@ navTogglerBtn.addEventListener("click", function () {
 // toggle class active when scrolling
 AllSections = document.querySelectorAll(".section");
 window.addEventListener("scroll", () => {
-      if(aside.classList.contains("active")){
-            aside.classList.remove("active");
-      }
+      // if(aside.classList.contains("active")){
+      //       aside.classList.remove("active");
+      // }
       let scrollY = window.pageYOffset;
       AllSections.forEach(sec => {
             const sectionTop = sec.offsetTop;

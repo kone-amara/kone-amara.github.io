@@ -599,7 +599,7 @@ h3.my-profession{
       transition: all 0.3s ease;
 }
 .contact .contact-info-item p a:hover{
-      color: var(--skin-color); 
+      color: var(--skin-color);
       text-decoration: underline;
 }
 .contact .contact-form{
@@ -794,6 +794,25 @@ h3.my-profession{
       .aside .nav-toggler{
             display: flex;
             top: 2%;
+      }
+      .aside .logo a{
+            margin-left: -7px;
+            padding: 5px;
+      }
+      .aside .logo a{
+            font-size: 13px;
+      }
+      .aside .logo a::after{
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid var(--skin-color);
+            border-right: 2px solid var(--skin-color);
+      }
+      .aside .logo a::before{
+            width: 10px;
+            height: 10px;
+            border-left: 2px solid var(--skin-color);
+            border-bottom: 2px solid var(--skin-color);
       }
       .aside .nav{
             display: none;
