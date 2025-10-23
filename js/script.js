@@ -1,12 +1,12 @@
-const { version } = require("react");
+// const { version } = require("react");
 
-// typing Animation
-var typed = new Typed(".typing", {
-      strings: ["développeur d'applications", "graphic designer", "UI/UX designer"],
-      typeSpeed: 100,
-      backSpeed: 40,
-      loop: true
-});
+// // typing Animation
+// var typed = new Typed(".typing", {
+//       strings: ["développeur d'applications", "graphic designer", "UI/UX designer"],
+//       typeSpeed: 100,
+//       backSpeed: 40,
+//       loop: true
+// });
 
 // Toogle class active for navbar options
 const nav = document.querySelector(".nav"),
@@ -50,43 +50,15 @@ window.addEventListener("scroll", () => {
       });
 });
 
-function TooglePrompt(){
-      document.querySelector('.prompt').classList.toggle('active');
-}
-// function SelectOption(){
-//      // Télécharger mon cv
-//     const selectedOption = 'fr';
-//     const options = document.querySelectorAll('input[name="option"]');
-//     options.forEach(option =>{
-//       option.addEventListener('change', ()=>{
-//         selectedOption = option.value
-//         alert(option.value)
-//         CvDownloadBtn.innerHTML = `<button type="button" class="btn btn-primary btn-lg" id="annuler" onclick="TooglePrompt()">
-//             Annuler
-//           </button>`;
-//       if(selectedOption === 'fr'){
-//                   CvDownloadBtn.innerHTML += "<a href='FilesPdf/CvKoneAmaraFr.pdf' download='FilesPdf/CvKoneAmaraFr.pdf' class='btn'>Télécharger</a>"
-//             } else if (selectedOption === 'en'){
-//                   CvDownloadBtn.innerHTML += "<a href='FilesPdf/CvKoneAmaraEn.pdf' download='FilesPdf/CvKoneAmaraEn.pdf' class='btn'>Télécharger</a>"
-//             } else {
-//                   CvDownloadBtn.innerHTML += "<a href='FilesPdf/CvKoneAmaraFrEn.pdf' download='FilesPdf/CvKoneAmaraFrEn.pdf' class='btn'>Télécharger</a>"
-//             }
-//       alert(CvDownloadBtn.innerHTML)
-//       })
-//     })
-// }
-
-
-
-
-// document.querySelector('#Download').addEventListener('click', (e) => {
-//       e.preventDefault
-//       const choix = document.querySelector('input[name="choix"]:checked').value;
-//       if(choix === 'fr'){
-//             window.location.href = 'FilesPdf/CvKoneAmaraFr.pdf';
-//       } else if (choix === 'en'){
-//             window.location.href = 'FilesPdf/CvKoneAmaraEn.pdf';
-//       } else {
-//             window.location.href = 'FilesPdf/CvKoneAmaraFrEn.pdf';
-//       }
-// });
+const age = document.getElementById("age");
+const calculateAge = () => {
+      const birthDate = new Date("2005-08-09");
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDifference = today.getMonth() - birthDate.getMonth();
+      if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+      }
+      return age;
+};
+age.textContent = `${calculateAge()} years`;

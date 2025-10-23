@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Kone Amara</title>
     <!-- ========== CSS FILES ======= -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/skins/color-1.css" />
@@ -62,7 +62,7 @@
                   Salut, moi c'est <span class="name">Kone Amara</span>
                 </h3>
                 <h3 class="my-profession">
-                  Je suis un <span class="typing"></span>
+                  Je suis un <span class="typing">Developpeur Web</span>
                 </h3>
                 <p>
                 Avantagé d'une grande capacité de d'analyse, avec quelques mois d'expérience professionnelle, ma spécialité est de concevoir et développer des sites dynamiques vitrines, e-commerce,etc... et des logiciels de gestion(Applications DESKTOP).
@@ -88,7 +88,6 @@
               <div class="about-content padd-15">
                 <div class="row">
                   <div class="about-text padd-15">
-                    <h3>Je suis Kone Amara et je suis un <span>developpeur d'applications</span></h3>
                     <p>
                       Développeur d'applications passionné par les nouvelles technologies, la résolution des problèmes 
                       complexes et doté d'une grande capacité d'analyse.
@@ -106,13 +105,13 @@
                         <p>Date de naissance: <span>09 Aug 2005</span></p>
                       </div>
                       <div class="info-item padd-15">
-                        <p>Age: <span>20 years</span></p>
+                        <p>Age: <span id="age">20 years</span></p>
                       </div>
                       <div class="info-item padd-15">
                         <p>Email: <span>koneamara05ci@gmail.com</span></p>
                       </div>
                       <div class="info-item padd-15">
-                        <p>Téléphone: <span>+225 0769815203</span></p>
+                        <p>Téléphone: <span>+225 0769815203/0502119299</span></p>
                       </div>
                       <div class="info-item padd-15">
                         <p>Localisation: <span>Abidjan yopougon, Cote d'ivoire</span></p>
@@ -120,7 +119,7 @@
                     </div>
                     <div class="row">
                       <div class="buttons padd-15">
-                        <button type="button" class="btn btn-primary btn-lg" id="DownloadCv" onclick="TooglePrompt()">
+                        <button type="button" class="btn btn-primary btn-lg" id="DownloadCv">
                           Télécharger mon CV
                         </button>
                         <a href="#contact" class="btn hire-me">Me Contacter</a>
@@ -231,7 +230,7 @@
                               Pendant cette expérience, avec pour mission principale le suivi des entrées et sorties de produits(reception de conteneurs, emargement des Bons de Livraison pour les livraisons et remplissages des Bons de transfert pour les sorties), supervision des opérations au sein de l'entrepot, établissement des rapports quotidiens, etc...,
                                j'ai acquis des compétences en gestion de parc à conteneurs import-export, des flux de conteneurs, des espaces dans les entrepots, du stock de marchandise et autres...
                               </br>
-                              J'ai aussi conçu un logiciel pour la gestion éfficace du stock des produits de l'entrepot, nommé "Warehouse System Management".
+                              J'ai aussi conçu un logiciel pour la gestion éfficace du stock des produits de l'entrepot, nommé "Warehouse System Management", j'en parlerai plus dans la partie PORTFOLIO.
                             </p>
                         </div>
                       </div>
@@ -535,70 +534,12 @@
     </div>
     <!-- ======= STYLE SWITCHER END ========-->
     <!-- ======= JS FILES ======= -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/script.js"></script>
-    <script src="js/style-switcher.js"></script>
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-  <script>
-
-    // Écouter les changements sur les boutons radio
-        const CvDownloadBtn = document.querySelector('.CvDownloadBtn');
-        const radios = document.querySelectorAll('input[type="radio"]');
-        let selectedValue = 'fr'
-        radios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                // Vérifier quelle option est sélectionnée et afficher sa valeur
-                if (this.checked) {
-                    selectedValue = this.value
-                    CvDownloadBtn.innerHTML = `<button type="button" class="btn btn-primary btn-lg" id="annuler" onclick="TooglePrompt()">Annuler</button>`;
-                    if(selectedValue === 'fr'){
-                                CvDownloadBtn.innerHTML += "<a href='FilesPdf/CvKoneAmaraFr.pdf' download='FilesPdf/CvKoneAmaraFr.pdf' class='btn'>Télécharger</a>"
-                          } else if (selectedValue === 'en'){
-                                CvDownloadBtn.innerHTML += "<a href='FilesPdf/CvKoneAmaraEn.pdf' download='FilesPdf/CvKoneAmaraEn.pdf' class='btn'>Télécharger</a>"
-                          } else {
-                                CvDownloadBtn.innerHTML += "<a href='FilesPdf/CvKoneAmaraFrEn.pdf' download='FilesPdf/CvKoneAmaraFrEn.pdf' class='btn'>Télécharger</a>"
-                          }
-                }
-            });
-        });
-
-
-
-    // Initialisation EmailJS
-    (function() {
-      emailjs.init({
-        publicKey: "o6FCSZR1ydhFsSjnn" // ⬅️ Remplace par ta clé publique EmailJS
-      });
-    })();
-
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("status");
-
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      // Texte de chargement
-      status.innerHTML = '<div class="text-info">Envoi en cours...</div>';
-
-      // Envoi via EmailJS
-      emailjs.send("service_8f70isq", "template_is4hptk", {
-        from_name: form.name.value,
-        from_email: form.email.value,
-        subject: form.subject.value,
-        message: form.message.value
-      })
-      .then(() => {
-        status.innerHTML = '<div class="text-success">✅ Message envoyé avec succès !</div>';
-        form.reset();
-        setTimeout(() => {
-          status.innerHTML = '';
-        }, 5000);
-      }, (err) => {
-        status.innerHTML = '<div class="text-danger">❌ Erreur : ' + JSON.stringify(err) + '</div>';
-      });
-    });
-  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+    <script src="js/sendMail.js"></script>
+    <script src="js/downloadCV.js"></script>
+    <script src="js/style-switcher.js"></script>
   </body>
 </html>
