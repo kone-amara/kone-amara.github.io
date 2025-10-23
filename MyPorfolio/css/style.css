@@ -737,6 +737,12 @@ h3.my-profession{
             max-width: 50%;
             margin-bottom: 30px;
       }
+      .home-img::after{
+            display: none;
+      }
+      .home-img::before{
+            display: none;
+      }
 }
 @media (max-width: 575px) {
       .aside .nav-toggler{
