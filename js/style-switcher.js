@@ -1,6 +1,10 @@
 const styleSwitcherToggler = document.querySelector(".style-switcher-toggler");
+const colorsToggle = document.querySelector(".colorsToggle");
 styleSwitcherToggler.addEventListener("click", () => {
   document.querySelector(".style-switcher").classList.toggle("open");
+});
+colorsToggle.addEventListener("click", () => {
+  document.querySelector(".style-switcher").classList.remove("open");
 });
 
 window.addEventListener("scroll", () => {

@@ -24,11 +24,12 @@ for (let i = 0; i < totalNavList; i++) {
 }
 
 // Toogle class active for aside
-const navTogglerBtn = document.querySelector(".nav-toggler"),
-      aside = document.querySelector(".aside");
+const navTogglerBtn = document.querySelector(".nav-toggler");
+const aside = document.querySelector(".aside");
 
 navTogglerBtn.addEventListener("click", function () {
       aside.classList.toggle("active");
+      navTogglerBtn.classList.toggle("active")
 });
 
 // toggle class active when scrolling
@@ -66,6 +67,10 @@ const calculateAge = () => {
 };
 age.textContent = `${calculateAge()} years`;
 
+const homeImg = document.querySelector('.home-img img');
+homeImg.addEventListener("click", function () {
+      this.classList.toggle('active')
+})
 window.onclick = function (event) {
       const navToggler = document.querySelector('.nav-toggler');
       if (event.target === nav) {
