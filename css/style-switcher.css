@@ -78,6 +78,9 @@
 .style-switcher .whatsappMe{
       top: 100px;
 }
+.style-switcher .whatsappMe i{
+      font-size: 30px;
+}
 .style-switcher .day-night i {
       font-size: 18px;
       color: var(--text-black-900);
